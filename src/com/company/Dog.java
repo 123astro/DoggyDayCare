@@ -4,6 +4,7 @@ public class Dog extends Animal {
         public String breed;
         public int snoutLength;
         public int tailInInches;
+        public String noise = "Ruff" ;
 
         public Dog(String breed,int snoutLength, int tailInInches, int legs, int sizeInInches, boolean isFixed,
                    String name, double weight, String gender ){
@@ -11,10 +12,19 @@ public class Dog extends Animal {
         this.breed = breed;
         this.snoutLength = snoutLength;
         this.tailInInches = tailInInches;
-}
-        public void speak() {
-                System.out.println("Ruff");
         }
+
+        public Dog(){
+                if( noise != null  ) {
+                        System.out.println(noise);
+                } else { sound();
+                }
+        }
+//        public Dog( String noise){
+//                this.noise = noise;
+//                if( this.noise != null  )
+//                        System.out.println(noise);
+//        }
 
         public String toString() {
                 return ("Breed: " + breed + "\nSnout Length: " + snoutLength +  "\nTail in Inches " +  tailInInches +

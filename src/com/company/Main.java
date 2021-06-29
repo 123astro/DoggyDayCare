@@ -6,44 +6,18 @@ import java.util.function.DoubleBinaryOperator;
 
 public class Main {
 
-    public static List<Animal> DoggyDayCare = new ArrayList<>();
     public static void main(String[] args) {
-        addAnimal(DoggyDayCare, new Cat("solid orange", true, true, 4, 60, true, "Sam", 8, "female"));
-        addAnimal(DoggyDayCare, new Dog("greyhound", 10, 15, 4, 60, true, "Jon", 10.4, "male"));
-        addAnimal(DoggyDayCare, new Dog("shepard", 8, 7, 4, 49, true, "Bob", 80, "male"));
-        displayAnimals(DoggyDayCare);
-        System.out.println("\nremove Bob\n");
-        removeAnimal(DoggyDayCare,"Bob");
+        List<Animal> DoggyDayCare = new ArrayList<>();
+        DayCare.addAnimal(DoggyDayCare, new Cat("solid orange", true, true, 4, 60, true, "Sam", 8, "female"));
+        DayCare.addAnimal(DoggyDayCare, new Dog("greyhound", 10, 15, 4, 60, true, "Jon", 10.4, "male"));
+        DayCare.addAnimal(DoggyDayCare, new Dog("shepard", 8, 7, 4, 49, true, "Bob", 80, "male"));
+        //DayCare.addAnimal(DoggyDayCare, new Dog());
+        DayCare.displayAnimals(DoggyDayCare, "Dog");
+        System.out.println("\nremove Bob from DoggyDayCare\n");
+        DayCare.removeAnimal(DoggyDayCare,"Bob");
+        DayCare.displayAnimals(DoggyDayCare);
+        DayCare.addAnimal(DoggyDayCare, new Dog());
 
-
-
-    }
-
-        public static void addAnimal(List<Animal> animalList, Animal animalType){  //Animal is the data type
-        animalList.add(animalType);
-    }
-
-        public static void displayAnimals(List<Animal> animalList) {
-        for (Animal animal : animalList)
-            System.out.println(animal);
-    }
-
-        public static void displayAnimals(List<Animal> animalList, String animalType) {
-        for (Animal animal : animalList) {
-            if (animal.getClass().getSimpleName().equals(animalType)) {
-                System.out.println(animalType);
-                System.out.println(animal);
-            }
-        }
-    }
-        public static void removeAnimal(List<Animal> animalList, String name){
-        for(Animal animal : animalList) {
-            if (animal.name.equals(name)) {
-                animalList.remove(animal);
-                displayAnimals(DoggyDayCare);
-                return;
-            }
-        }
     }
 }
 

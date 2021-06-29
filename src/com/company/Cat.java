@@ -13,8 +13,8 @@ public class Cat extends Animal {
                 this.clawed = clawed;
         }
 
-        public void speak() {
-                System.out.println("purr");
+        public static void speak() {
+                System.out.println("Purr");
         }
 
         public String toString() {
