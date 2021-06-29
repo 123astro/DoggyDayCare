@@ -2,28 +2,33 @@ package com.company;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.DoubleBinaryOperator;
 
 public class Main {
+
     public static List<Animal> DoggyDayCare = new ArrayList<>();
-
     public static void main(String[] args) {
-        //DoggyDayCare.add(new Cat("striped", true, 7, 4, 20, true, "Mindy"));
-       DoggyDayCare.add(new Dog("GreyHound", 9, 4, 4, 48, true, "Fred"));
-        Cat Mindy  = new  Cat("striped", true, 7, 4, 20, true, "Mindy");
-        // write your code here
-        //displayAnimals(DoggyDayCare);
-        displayAnimals(DoggyDayCare, "Dog");
+        addAnimal(DoggyDayCare, new Cat("solid orange", true, true, 4, 60, true, "Sam", 8, "female"));
+        addAnimal(DoggyDayCare, new Dog("greyhound", 10, 15, 4, 60, true, "Jon", 10.4, "male"));
+        addAnimal(DoggyDayCare, new Dog("shepard", 8, 7, 4, 49, true, "Bob", 80, "male"));
+        displayAnimals(DoggyDayCare);
+        System.out.println("\nremove Bob\n");
+        removeAnimal(DoggyDayCare,"Bob");
+
+
+
     }
-  //  public static void addAnimal()()
 
+        public static void addAnimal(List<Animal> animalList, Animal animalType){  //Animal is the data type
+        animalList.add(animalType);
+    }
 
-
-    public static void displayAnimals(List<Animal> animalList) {
+        public static void displayAnimals(List<Animal> animalList) {
         for (Animal animal : animalList)
             System.out.println(animal);
     }
 
-    public static void displayAnimals(List<Animal> animalList, String animalType) {
+        public static void displayAnimals(List<Animal> animalList, String animalType) {
         for (Animal animal : animalList) {
             if (animal.getClass().getSimpleName().equals(animalType)) {
                 System.out.println(animalType);
@@ -31,14 +36,17 @@ public class Main {
             }
         }
     }
+        public static void removeAnimal(List<Animal> animalList, String name){
+        for(Animal animal : animalList) {
+            if (animal.name.equals(name)) {
+                animalList.remove(animal);
+                displayAnimals(DoggyDayCare);
+                return;
+            }
+        }
+    }
 }
-//    public static void displayAnimals(List<Animal> animalList, String animalName) {
-//        for (Animal animal : animalList){
-//            if(animal.) {
-//                System.out.println(animalName);
-//                System.out.println(animal);
-//            }
-//        }}
+
 
 
 //    Warm up review of the previous work with a test on Github. Submit the github link to your repo for this
