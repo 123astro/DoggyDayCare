@@ -11,7 +11,7 @@ public class Main {
        DoggyDayCare.add(new Dog("GreyHound", 9, 4, 4, 48, true, "Fred"));
         Cat Mindy  = new  Cat("striped", true, 7, 4, 20, true, "Mindy");
         // write your code here
-        displayAnimals(DoggyDayCare);
+        //displayAnimals(DoggyDayCare);
         displayAnimals(DoggyDayCare, "Dog");
     }
   //  public static void addAnimal()()
